@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Login">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/jk"
+            android:layout_width="407dp"
+            android:layout_height="396dp"
+            android:background="@drawable/scrn"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:gravity="center_horizontal" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="362dp"
+            android:layout_height="522dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="84dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="30dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logo3"
+                tools:ignore="MissingConstraints"
+
+                />
+
+            <info.androidhive.fontawesome.FontTextView
+                android:id="@+id/p1"
+                android:layout_width="73dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="120dp"
+                android:text="@string/fa_address_card"
+                android:textColor="#02DFFB"
+                android:textSize="40dp"
+                app:solid_icon="true"
+                />
+
+
+            <com.libizo.CustomEditText
+                android:id="@+id/email"
+                android:layout_width="200dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="124dp"
+                android:hint="Enter User ID"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="2dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:libIZO_clearIconTint="@color/black"
+                app:libIZO_setBorderColor="#d4d2d3"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setClearIconVisible="true"
+                android:shadowColor="@color/black"
+                android:shadowDx="1.2"
+                android:shadowDy="1.2"
+                android:shadowRadius="1.5"
+                app:libIZO_setFont="@string/robotoRegular" />
+
+            <info.androidhive.fontawesome.FontTextView
+                android:id="@+id/p2"
+                android:layout_width="73dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="170dp"
+                android:text="@string/fa_keyboard"
+                android:textColor="#02DFFB"
+                android:textSize="40dp"
+                app:solid_icon="true"
+                />
+
+
+            <com.libizo.CustomEditText
+                android:id="@+id/pswk"
+                android:layout_width="200dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="174dp"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="2dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:libIZO_clearIconTint="@color/black"
+                app:libIZO_setBorderColor="#d4d2d3"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setClearIconVisible="true"
+                android:shadowColor="@color/black"
+                android:shadowDx="1.2"
+                android:shadowDy="1.2"
+                android:shadowRadius="1.5"
+                app:libIZO_setFont="@string/robotoRegular" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="100dp"
+                android:background="@color/cyan"
+                android:shadowColor="@color/black"
+                android:shadowDx="1.2"
+                android:shadowDy="1.2"
+                android:shadowRadius="1.5"
+                android:text="Login"
+                android:textSize="15dp"
+                app:backgroundTint="@color/cyan"
+                app:elevation="12dp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
