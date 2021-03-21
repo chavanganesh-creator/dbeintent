@@ -1,16 +1,16 @@
-package com.example.dbeintent.ui.slideshow;
+package com.example.dbeintent.ui.task;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class TaskViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public TaskViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is task View model fragment");
     }
 
     public LiveData<String> getText() {

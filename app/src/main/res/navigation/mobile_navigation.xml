@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.dbeintent.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_user"
+        android:name="com.example.dbeintent.ui.user.UserFragment"
+        android:label="@string/menu_user"
+        tools:layout="@layout/fragment_user" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.dbeintent.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_report"
+        android:name="com.example.dbeintent.ui.report.ReportFragment"
+        android:label="@string/menu_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/nav_task"
+        android:name="com.example.dbeintent.ui.task.TaskFragment"
+        android:label="@string/menu_task"
+        tools:layout="@layout/fragment_task" />
 </navigation>
