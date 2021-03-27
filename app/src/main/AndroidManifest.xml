@@ -12,7 +12,7 @@
         <activity
             android:name=".nextstep1"
             android:label="@string/title_activity_nextstep1"
-            android:theme="@style/Theme.Dbeintent.NoActionBar"></activity>
+            android:theme="@style/Theme.Dbeintent.NoActionBar" />
         <activity android:name=".splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".ui.home.HomeNextActivity"></activity>
+
     </application>
 
 </manifest>
