@@ -1,11 +1,13 @@
 package com.example.dbeintent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -52,7 +54,7 @@ public class Login extends Fragment {
        email=(EditText)v.findViewById(R.id.email);
        pswk=(EditText)v.findViewById(R.id.pswk);
        login=(Button)v.findViewById(R.id.login);
-       login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                String emilstr = email.getText().toString();
@@ -91,6 +93,7 @@ public class Login extends Fragment {
                                    Toast.makeText(getActivity(), "Login Sucessfull", Toast.LENGTH_LONG).show();
                                        Intent nxtscreen = new Intent(getContext(), nextstep1.class);
                                        startActivity(nxtscreen);
+                                       getActivity().finish();
                                }
                                else Toast.makeText(getActivity(),"Login Unsucessfull",Toast.LENGTH_LONG).show();
                            }
@@ -99,7 +102,8 @@ public class Login extends Fragment {
                }
            }
        });
-       return v;
+        
+        return v;
 
     }
 }
