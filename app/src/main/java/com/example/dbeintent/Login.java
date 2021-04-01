@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -45,6 +46,7 @@ import static android.content.ContentValues.TAG;
 public class Login extends Fragment {
     private EditText email,pswk,inputdoc;
     private Button login;
+    private CheckBox empid;
     private static final String TAG = "MainActivity";
     @Nullable
     @Override
@@ -54,12 +56,16 @@ public class Login extends Fragment {
        email=(EditText)v.findViewById(R.id.email);
        pswk=(EditText)v.findViewById(R.id.pswk);
        login=(Button)v.findViewById(R.id.login);
+       empid=(CheckBox)v.findViewById(R.id.empid);
         login.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                String emilstr = email.getText().toString();
                String pswkstr = pswk.getText().toString();
-               //Toast.makeText(getActivity(), pswkstr, Toast.LENGTH_SHORT).show();
+               String dbtype="";
+               if(empid.isChecked())
+                   dbtype="@string/dbtype_emp";
+               else dbtype="@string/dbtype_cli";
                if(emilstr.length()==0)
                {
                    email.requestFocus();
@@ -68,17 +74,17 @@ public class Login extends Fragment {
                else if(!emilstr.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})+$"))
                {
                    email.requestFocus();
-                   email.setError("Enter Only Alphabetical Charachter");
+                   email.setError("Enter Only Alphabetical Character");
                }
                else if(pswkstr.length()==0)
                {
                    pswk.requestFocus();
-                   pswk.setError("Field Cant't Be Emety");
+                   pswk.setError("Field Can't Be Empty");
                }
                else
                {
                    FirebaseFirestore db = FirebaseFirestore.getInstance();
-                   DocumentReference docIdRef=db.collection("Employee").document(emilstr);
+                   DocumentReference docIdRef=db.collection(dbtype).document(emilstr);
                    docIdRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                        @Override
                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {

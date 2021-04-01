@@ -15,5 +15,7 @@
     <string name="menu_report">Daily Report</string>
     <string name="menu_user">User Profile</string>
     <string name="menu_task">New Task</string>
+    <string name="dbtype_emp">Employee</string>
+    <string name="dbtype_cli">Client</string>
 
 </resources>

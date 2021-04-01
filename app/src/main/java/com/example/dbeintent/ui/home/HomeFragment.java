@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
-        mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/images%2Ff178d6ff-9699-42d7-abfa-8b1cafd9db0c?alt=media&token=e4e5052f-02f3-4d31-a288-e94f03549c35");
         mNames.add("Havasu Falls");
 
         mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
