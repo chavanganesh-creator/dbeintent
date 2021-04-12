@@ -62,10 +62,7 @@ public class Login extends Fragment {
            public void onClick(View v) {
                String emilstr = email.getText().toString();
                String pswkstr = pswk.getText().toString();
-               String dbtype="";
-               if(empid.isChecked())
-                   dbtype="@string/dbtype_emp";
-               else dbtype="@string/dbtype_cli";
+
                if(emilstr.length()==0)
                {
                    email.requestFocus();
@@ -84,7 +81,7 @@ public class Login extends Fragment {
                else
                {
                    FirebaseFirestore db = FirebaseFirestore.getInstance();
-                   DocumentReference docIdRef=db.collection(dbtype).document(emilstr);
+                   DocumentReference docIdRef=db.collection("Employee").document(emilstr);
                    docIdRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                        @Override
                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
