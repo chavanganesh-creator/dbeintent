@@ -51,34 +51,25 @@ public class HomeFragment extends Fragment {
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
-        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/images%2Ff178d6ff-9699-42d7-abfa-8b1cafd9db0c?alt=media&token=e4e5052f-02f3-4d31-a288-e94f03549c35");
-        mNames.add("Havasu Falls");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FActivited_task.jpg?alt=media&token=6a5412ed-87d8-47cc-ac35-da1aaaca0eac");
+        mNames.add("Activited Task");
 
-        mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-        mNames.add("Trondheim");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAdd_task.jpg?alt=media&token=7530c9d8-5743-4a32-9c88-23bf13b88e39");
+        mNames.add("Add Task");
 
-        mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        mNames.add("Portugal");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAttendance.jpg?alt=media&token=e3203814-4d4e-440d-a3b7-b3e2d96d10e4");
+        mNames.add("Attendance");
 
-        mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-        mNames.add("Rocky Mountain National Park");
-
-
-        mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        mNames.add("Mahahual");
-
-        mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-        mNames.add("Frozen Lake");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FComplaint.jpg?alt=media&token=686f23dc-eddf-4789-ad9c-f8ad36eaed0a");
+        mNames.add("Complaint");
 
 
-        mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-        mNames.add("White Sands Desert");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FHistory.jpg?alt=media&token=788e6bd8-cdfa-409c-aaa2-f0d1593a59d6");
+        mNames.add("History");
 
-        mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
-        mNames.add("Austrailia");
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2Fnumber-pad.png?alt=media&token=834c6dfc-bbeb-4f74-8b53-6581f919d68d");
+        mNames.add("Dial Pad");
 
-        mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-        mNames.add("Washington");
 
         initRecyclerView();
     }

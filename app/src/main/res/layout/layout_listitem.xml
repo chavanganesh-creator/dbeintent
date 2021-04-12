@@ -5,10 +5,13 @@
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="120dp"
-    android:layout_height="190dp"
+    android:layout_height="160dp"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="5dp"
-    cardview:cardCornerRadius="4dp">
+    android:layout_marginLeft="27dp"
+    android:paddingTop="14dp"
+    cardview:cardCornerRadius="4dp"
+    cardview:cardElevation="10dp"
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,17 +22,18 @@
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="130dp"
             android:scaleType="centerCrop"
-            android:background="#2d2d2d"
+            android:background="@color/white"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/image_name"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/image"
-            android:textColor="#2d2d2d"
+            android:textColor="#B99C9A9A"
             android:textSize="13sp"
+            android:padding="10dp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
