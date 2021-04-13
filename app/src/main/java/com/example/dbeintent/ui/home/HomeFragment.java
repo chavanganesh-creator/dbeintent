@@ -70,6 +70,9 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2Fnumber-pad.png?alt=media&token=834c6dfc-bbeb-4f74-8b53-6581f919d68d");
         mNames.add("Dial Pad");
 
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAttendance.jpg?alt=media&token=e3203814-4d4e-440d-a3b7-b3e2d96d10e4");
+        mNames.add("Attendance");
+
 
         initRecyclerView();
     }
