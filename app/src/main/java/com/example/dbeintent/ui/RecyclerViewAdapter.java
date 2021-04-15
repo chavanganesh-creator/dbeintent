@@ -1,4 +1,4 @@
-package com.example.dbeintent.ui.report;
+package com.example.dbeintent.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -15,27 +15,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.dbeintent.R;
 import com.example.dbeintent.ui.home.HomeNextActivity;
+import com.example.dbeintent.ui.report.ReportNextActivity;
 
 import java.util.ArrayList;
 
 
-public class RecyclerReportViewAdapter extends RecyclerView.Adapter<RecyclerReportViewAdapter.ViewHolder>{
+
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
     private static final String TAG = "RecyclerViewAdapter";
 
     private ArrayList<String> mImageNames = new ArrayList<>();
     private ArrayList<String> mImages = new ArrayList<>();
     private Context mContext;
-
-    public RecyclerReportViewAdapter(Context context, ArrayList<String> imageNames, ArrayList<String> images ) {
+    private String mNxtActivity;
+    public RecyclerViewAdapter(Context context, ArrayList<String> imageNames, ArrayList<String> images, String nxthoneactivity) {
         mImageNames = imageNames;
         mImages = images;
         mContext = context;
+        mNxtActivity=nxthoneactivity;
     }
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_reportlistitem, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -57,11 +61,18 @@ public class RecyclerReportViewAdapter extends RecyclerView.Adapter<RecyclerRepo
                 Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
 
                 Toast.makeText(mContext, mImageNames.get(position), Toast.LENGTH_SHORT).show();
-
-                Intent homenxt = new Intent(view.getContext(), HomeNextActivity.class);
-                homenxt.putExtra("image_url", mImages.get(position));
-                homenxt.putExtra("image_name", mImageNames.get(position));
-                view.getContext().startActivity(homenxt);
+                if(mNxtActivity=="HomeNextActivity.class") {
+                    Intent homenxt = new Intent(view.getContext(), HomeNextActivity.class);
+                    homenxt.putExtra("image_url", mImages.get(position));
+                    homenxt.putExtra("image_name", mImageNames.get(position));
+                    view.getContext().startActivity(homenxt);
+                }
+                if(mNxtActivity=="ReportNextActivity.class") {
+                    Intent homenxt = new Intent(view.getContext(), ReportNextActivity.class);
+                    homenxt.putExtra("image_url", mImages.get(position));
+                    homenxt.putExtra("image_name", mImageNames.get(position));
+                    view.getContext().startActivity(homenxt);
+                }
             }
         });
     }

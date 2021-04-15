@@ -2,14 +2,15 @@ package com.example.dbeintent.ui.home;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
+import com.bumptech.glide.Glide;
 import com.example.dbeintent.R;
+
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 public class HomeNextActivity extends AppCompatActivity {
 
@@ -31,23 +32,12 @@ public class HomeNextActivity extends AppCompatActivity {
             Log.d(TAG, "getIncomingIntent: found intent extras.");
 
             String imageUrl = getIntent().getStringExtra("image_url");
-            String imageName = getIntent().getStringExtra("image_name");
 
-            setImage(imageUrl, imageName);
         }
+        FragmentManager fm = getSupportFragmentManager();
+        ActiveRunTask fm2 = new ActiveRunTask();
+        fm.beginTransaction().add(R.id.servefragment, fm2).commit();
+
     }
 
-
-    private void setImage(String imageUrl, String imageName){
-        Log.d(TAG, "setImage: setting te image and name to widgets.");
-
-        TextView name = findViewById(R.id.image_description);
-        name.setText(imageName);
-
-        ImageView image = findViewById(R.id.image);
-        Glide.with(this)
-                .asBitmap()
-                .load(imageUrl)
-                .into(image);
-    }
 }

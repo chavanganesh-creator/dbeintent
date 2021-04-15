@@ -57,7 +57,7 @@ public class Login extends Fragment {
        pswk=(EditText)v.findViewById(R.id.pswk);
        login=(Button)v.findViewById(R.id.login);
        empid=(CheckBox)v.findViewById(R.id.empid);
-        login.setOnClickListener(new View.OnClickListener() {
+       login.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                String emilstr = email.getText().toString();
