@@ -34,6 +34,7 @@ public class HomeNextActivity extends AppCompatActivity {
             String imageUrl = getIntent().getStringExtra("image_url");
 
         }
+
         FragmentManager fm = getSupportFragmentManager();
         ActiveRunTask fm2 = new ActiveRunTask();
         fm.beginTransaction().add(R.id.servefragment, fm2).commit();

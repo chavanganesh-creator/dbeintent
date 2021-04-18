@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".ui.home.ActiveRunTask">
 
@@ -24,7 +24,7 @@
         android:textSize="29sp"
         android:padding="8dp"
         android:shadowColor="@color/black"
-        android:text="Active Running Task Detail"
+        android:text="Active Task Detail"
         android:gravity="center_horizontal" />
     <TextView
         android:layout_width="match_parent"
@@ -32,11 +32,146 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="95dp"
         android:layout_marginLeft="2mm"
         android:shadowColor="@color/black"
         android:text="#WE45658767"
+        android:id="@+id/minheader"
         android:gravity="left" />
 </RelativeLayout>
 
-</FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+
+         android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/followdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#EF0F0F"
+            android:textSize="16sp"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="* Task Details"
+            android:padding="8dp"
+            />
+
+        <TextView
+            android:id="@+id/taskidt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="Task ID"
+            android:padding="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskid"
+            android:focusable="false"
+            android:textColor="#D27E7C7C"
+            android:inputType="none"
+            android:layout_marginLeft="11dp"
+            />
+        <TextView
+            android:id="@+id/taskdiscriptiont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="Task Discription "
+            android:padding="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskdiscription"
+            android:layout_marginLeft="11dp"
+            android:inputType="none"
+            android:textColor="#D27E7C7C"
+            android:focusable="false"
+
+            />
+
+        <TextView
+            android:id="@+id/task_Addresst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="Task Address"
+            android:padding="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_Address"
+            android:layout_marginLeft="11dp"
+            android:focusable="false"
+            android:textColor="#D27E7C7C"
+             />
+        <TextView
+            android:id="@+id/task_refnumbert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="Referal Contact Number"
+            android:padding="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_refnumber"
+            android:layout_marginLeft="11dp"
+            android:focusable="false"
+            android:textColor="#D27E7C7C"
+             />
+        <TextView
+            android:id="@+id/task_generationt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="Task Generated By"
+            android:padding="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_generation"
+            android:focusable="false"
+            android:inputType="none"
+            android:textColor="#D27E7C7C"
+            android:layout_marginLeft="11dp"
+        />
+        <TextView
+            android:id="@+id/task_Datet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/crete_round"
+            android:layout_centerVertical="true"
+            android:text="Task Generated Time And Date"
+            android:padding="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_date"
+            android:layout_marginLeft="11dp"
+            android:focusable="false"
+            android:textColor="#D27E7C7C"
+             />
+    </LinearLayout>
+ </RelativeLayout>
