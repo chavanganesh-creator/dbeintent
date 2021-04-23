@@ -2,18 +2,21 @@ package com.example.dbeintent.ui.home;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.bumptech.glide.Glide;
 import com.example.dbeintent.R;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
+
+import java.util.ArrayList;
+
+import static android.app.PendingIntent.getActivity;
 
 public class HomeNextActivity extends AppCompatActivity {
-
+    private ArrayList<String> mImageUrls = new ArrayList<>();
+    FragmentManager fm = getSupportFragmentManager();
     private static final String TAG = "HomeNextActivity";
 
     @Override
@@ -27,18 +30,21 @@ public class HomeNextActivity extends AppCompatActivity {
 
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
-
-        if(getIntent().hasExtra("image_url") && getIntent().hasExtra("image_name")){
-            Log.d(TAG, "getIncomingIntent: found intent extras.");
-
-            String imageUrl = getIntent().getStringExtra("image_url");
-
+        String imageName = getIntent().getStringExtra("image_name");
+        Bundle bundle=new Bundle();
+        bundle.putString("imgurl", getIntent().getStringExtra("image_url"));
+        switch (imageName){
+            case "Activited Task":  loadfragment(new ActiveRunTask(),bundle);break;
+            case "Add Task":        loadfragment(new AddTaskEmp(), bundle);break;
         }
 
-        FragmentManager fm = getSupportFragmentManager();
-        ActiveRunTask fm2 = new ActiveRunTask();
-        fm.beginTransaction().add(R.id.servefragment, fm2).commit();
 
     }
+
+    private void loadfragment(Fragment fragment, Bundle bundle) {
+        fragment.setArguments(bundle);
+        fm.beginTransaction().add(R.id.servefragment,fragment).commit();
+    }
+
 
 }

@@ -17,5 +17,6 @@
     <string name="menu_task">New Task</string>
     <string name="dbtype_emp">Employee</string>
     <string name="dbtype_cli">Client</string>
+    <string name="defaulter_name">Defaulter Name</string>
 
 </resources>

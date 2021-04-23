@@ -49,27 +49,12 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAdd_task.jpg?alt=media&token=7530c9d8-5743-4a32-9c88-23bf13b88e39");
         mNames.add("Add Task");
 
-        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAttendance.jpg?alt=media&token=e3203814-4d4e-440d-a3b7-b3e2d96d10e4");
-        mNames.add("Attendance");
-
-        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FComplaint.jpg?alt=media&token=686f23dc-eddf-4789-ad9c-f8ad36eaed0a");
-        mNames.add("Complaint");
-
-        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FHistory.jpg?alt=media&token=788e6bd8-cdfa-409c-aaa2-f0d1593a59d6");
-        mNames.add("History");
-
-        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2Fnumber-pad.png?alt=media&token=834c6dfc-bbeb-4f74-8b53-6581f919d68d");
-        mNames.add("Dial Pad");
-
-        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAttendance.jpg?alt=media&token=e3203814-4d4e-440d-a3b7-b3e2d96d10e4");
-        mNames.add("Attendance");
 
 
         initRecyclerView();
     }
 
     private void initRecyclerView(){
-        Log.d(TAG, "initRecyclerView: init recyclerview.");
         RecyclerView recyclerView =getView().findViewById(R.id.recycler_view);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext().getApplicationContext(), mNames, mImageUrls,mNxtHomeActivity);
         recyclerView.setAdapter(adapter);

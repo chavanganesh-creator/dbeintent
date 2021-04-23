@@ -20,7 +20,6 @@ import com.example.dbeintent.ui.report.ReportNextActivity;
 import java.util.ArrayList;
 
 
-
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
     private static final String TAG = "RecyclerViewAdapter";
@@ -46,7 +45,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Log.d(TAG, "onBindViewHolder: called.");
 
         Glide.with(mContext)
                 .asBitmap()
