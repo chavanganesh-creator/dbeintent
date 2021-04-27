@@ -22,7 +22,16 @@
         android:outlineAmbientShadowColor="#EDDDDD"
         android:clickable="true"
         tools:ignore="MissingConstraints" />
-<include layout="@layout/layout_listtag"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ProgressBar
+        android:id="@+id/idProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true" />
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

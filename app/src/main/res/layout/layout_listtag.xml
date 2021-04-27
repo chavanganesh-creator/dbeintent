@@ -58,7 +58,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <Button
         android:id="@+id/task_addbucket"
-        android:layout_width="38dp"
+        android:layout_width="35dp"
         android:layout_height="38dp"
         android:background="@drawable/ic_add_bucket"
         tools:ignore="MissingConstraints"
