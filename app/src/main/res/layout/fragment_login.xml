@@ -164,6 +164,7 @@
                 android:text="Login"
                 android:textSize="15dp"
                 app:backgroundTint="@color/cyan"
+                android:foreground="?android:attr/selectableItemBackground"
                 app:elevation="12dp" />
 
         </androidx.cardview.widget.CardView>

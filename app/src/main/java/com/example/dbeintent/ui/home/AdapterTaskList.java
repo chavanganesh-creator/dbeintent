@@ -22,29 +22,18 @@ public class AdapterTaskList extends RecyclerView.Adapter<AdapterTaskList.ViewHo
     }
 
 
-
-
-//    public AdapterTaskList(@NonNull FirestoreRecyclerOptions<Note> options) {
-//            super(options);
-//        }
-//        @Override
-//        protected void onBindViewHolder(@NonNull NoteHolder holder, int position, @NonNull Note model) {
-//            holder.textViewTitle.setText(model.getTitle());
-//            holder.textViewDescription.setText(model.getDescription());
-//            holder.textViewPriority.setText(String.valueOf(model.getPriority()));
-//        }
-
-
     @NonNull
     @Override
     public AdapterTaskList.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.notes, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listtag, parent, false));
     }
 
     @Override
      public void onBindViewHolder(@NonNull AdapterTaskList.ViewHolder holder, int position) {
-         holder.textViewTitle.setText(noteArrayList.get(position).getTitle());
-         holder.textViewDescription.setText(noteArrayList.get(position).getDescription());
+        holder.task_id.setText("#"+noteArrayList.get(position).getTask_id());
+        holder.cli_name.setText(noteArrayList.get(position).getCli_name());
+        holder.task_address.setText(noteArrayList.get(position).getTask_address());
+        holder.cli_description.setText(noteArrayList.get(position).getCli_description());
 
      }
 
@@ -54,14 +43,17 @@ public class AdapterTaskList extends RecyclerView.Adapter<AdapterTaskList.ViewHo
      }
 
      class ViewHolder extends RecyclerView.ViewHolder {
-         private final TextView textViewTitle;
-         private final TextView textViewDescription;
+         private final TextView task_id;
+         private final TextView cli_name;
+         private final TextView task_address;
+         private final TextView cli_description;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                textViewTitle = itemView.findViewById(R.id.text_view_title);
-                textViewDescription = itemView.findViewById(R.id.text_view_description);
-
+                task_id = itemView.findViewById(R.id.task_id);
+                cli_name = itemView.findViewById(R.id.cli_name);
+                task_address = itemView.findViewById(R.id.task_address);
+                cli_description = itemView.findViewById(R.id.cli_description);
             }
         }
     }

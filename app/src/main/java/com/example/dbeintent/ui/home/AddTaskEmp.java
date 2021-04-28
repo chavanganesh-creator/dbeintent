@@ -44,7 +44,6 @@ import java.util.Set;
 
 public class AddTaskEmp extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    DocumentReference notebookRef =db.collection("user").document("y123");
     ProgressBar loadingPB;
     public AdapterTaskList adapter;
     public RecyclerView recyclerView;
@@ -71,32 +70,10 @@ public class AddTaskEmp extends Fragment {
         noteArrayList=new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         adapter = new AdapterTaskList(noteArrayList,v.getContext());
-           recyclerView.setAdapter(adapter);
-
-
+        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-//        db.collection("user").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//            @Override
-//            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                if(!queryDocumentSnapshots.isEmpty()){
-//                    loadingPB.setVisibility(View.GONE);
-//                    List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
-//                    for(DocumentSnapshot d:list){
-//                        Note c=d.toObject(Note.class);
-//                        noteArrayList.add(c);
-//                    }
-//                    adapter.notifyDataSetChanged();
-//
-//                } else {
-//                    // if the snapshot is empty we are displaying a toast message.
-//                    Toast.makeText(getContext(), "No data found in Database", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
 
-
-
-        db.collection("user")
+        db.collection("Task")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
 
                     @Override
@@ -107,9 +84,17 @@ public class AddTaskEmp extends Fragment {
                             Toast.makeText(getContext(), "Listen failed.", Toast.LENGTH_SHORT).show();
                             return;
                         }
+//                        for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+//                            //Log.d(TAG, document.getId() + " => " + document.getData());
+//                            Toast.makeText(getContext(), document.getId(), Toast.LENGTH_SHORT).show();
+//                            break;
+//
+//                        }
+
                         for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                             Note message = doc.toObject(Note.class);
                             Set<Note> set = new LinkedHashSet<>();
+
                             if (doc.exists()) {
                                 loadingPB.setVisibility(View.GONE);
                                 newArrayList.add(message);
@@ -123,7 +108,6 @@ public class AddTaskEmp extends Fragment {
 
                     }
                 });
-
         return v;
 
     }
