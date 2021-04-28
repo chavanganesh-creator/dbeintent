@@ -36,16 +36,20 @@ import com.google.firebase.firestore.QuerySnapshot;
 import org.w3c.dom.Document;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class AddTaskEmp extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    //DocumentReference notebookRef =db.collection("user").document("y123");
+    DocumentReference notebookRef =db.collection("user").document("y123");
     ProgressBar loadingPB;
     public AdapterTaskList adapter;
     public RecyclerView recyclerView;
     public ArrayList<Note> noteArrayList;
+    private int cnt=0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,58 +69,61 @@ public class AddTaskEmp extends Fragment {
                 .load(imageUrl)
                 .into(image);
         noteArrayList=new ArrayList<>();
-        //adapter = new AdapterTaskList(options);
-       // RecyclerView recyclerView =v.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         adapter = new AdapterTaskList(noteArrayList,v.getContext());
-        recyclerView.setAdapter(adapter);
+           recyclerView.setAdapter(adapter);
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-        db.collection("user").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                if(!queryDocumentSnapshots.isEmpty()){
-                    loadingPB.setVisibility(View.GONE);
-                    List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
-                    for(DocumentSnapshot d:list){
-                        Note c=d.toObject(Note.class);
-                        noteArrayList.add(c);
-                    }
-                    adapter.notifyDataSetChanged();
-
-                } else {
-                    // if the snapshot is empty we are displaying a toast message.
-                    Toast.makeText(getContext(), "No data found in Database", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-
-//        db.collection("user")
-//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots,
-//                                        @Nullable FirebaseFirestoreException e) {
-//
-//                        if (e != null) {
-//                         //   Log.w("YourTag", "Listen failed.", e);
-//                            Toast.makeText(getContext(), "Listen failed.", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
-//
-//                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-//                            if (doc.exists()){
-//                                loadingPB.setVisibility(View.GONE);
-//                                Note message = doc.toObject(Note.class);
-//                                noteArrayList.add(message);
-//                                adapter.notifyDataSetChanged();
-//                            }
-//                        }
-//                        //Log.d("YourTag", "messageList: " + messageList);
-//                        Toast.makeText(getContext()," outerforloop", Toast.LENGTH_SHORT).show();
-//
+//        db.collection("user").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//            @Override
+//            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                if(!queryDocumentSnapshots.isEmpty()){
+//                    loadingPB.setVisibility(View.GONE);
+//                    List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
+//                    for(DocumentSnapshot d:list){
+//                        Note c=d.toObject(Note.class);
+//                        noteArrayList.add(c);
 //                    }
-//                });
+//                    adapter.notifyDataSetChanged();
+//
+//                } else {
+//                    // if the snapshot is empty we are displaying a toast message.
+//                    Toast.makeText(getContext(), "No data found in Database", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+
+
+        db.collection("user")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots,
+                                        @Nullable FirebaseFirestoreException e) {
+                        ArrayList<Note> newArrayList=new ArrayList<>();
+                        if (e != null) {
+                            Toast.makeText(getContext(), "Listen failed.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                            Note message = doc.toObject(Note.class);
+                            Set<Note> set = new LinkedHashSet<>();
+                            if (doc.exists()) {
+                                loadingPB.setVisibility(View.GONE);
+                                newArrayList.add(message);
+                                set.addAll(newArrayList);
+                                noteArrayList.clear();
+                                noteArrayList.addAll(set);
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
+
+
+                    }
+                });
+
         return v;
 
     }
