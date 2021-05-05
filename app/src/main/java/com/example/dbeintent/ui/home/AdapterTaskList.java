@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dbeintent.R;
+import com.example.dbeintent.ui.home.classes.Note;
 
 import java.util.ArrayList;
 

@@ -36,6 +36,8 @@ public class HomeNextActivity extends AppCompatActivity {
         switch (imageName){
             case "Activited Task":  loadfragment(new ActiveRunTask(),bundle);break;
             case "Add Task":        loadfragment(new AddTaskEmp(), bundle);break;
+            case "Attendance":      loadfragment(new Attendance(),bundle);break;
+            case  "Complaint":      loadfragment(new Complaint(),bundle);break;
         }
 
 

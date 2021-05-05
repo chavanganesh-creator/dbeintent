@@ -1,4 +1,4 @@
-package com.example.dbeintent.ui.home;
+package com.example.dbeintent.ui.home.classes;
 
 public class Note {
     private String task_id;

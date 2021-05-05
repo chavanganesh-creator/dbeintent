@@ -49,7 +49,11 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAdd_task.jpg?alt=media&token=7530c9d8-5743-4a32-9c88-23bf13b88e39");
         mNames.add("Add Task");
 
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FAttendance.jpg?alt=media&token=e3203814-4d4e-440d-a3b7-b3e2d96d10e4");
+        mNames.add("Attendance");
 
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FComplaint.jpg?alt=media&token=686f23dc-eddf-4789-ad9c-f8ad36eaed0a");
+        mNames.add("Complaint");
 
         initRecyclerView();
     }
