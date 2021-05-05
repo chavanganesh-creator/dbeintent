@@ -5,10 +5,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.Complaint">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="303dp"
+        android:layout_gravity="fill"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="#EDDDDD"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        tools:ignore="MissingConstraints" />
 
 </FrameLayout>
