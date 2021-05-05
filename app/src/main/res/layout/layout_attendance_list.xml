@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:outlineAmbientShadowColor="@color/black"
+    android:background="@drawable/atten_rectangle"
+    android:layout_margin="10dp"
+    android:padding="8dp"
+    android:elevation="6dp"
+    tools:ignore="ResourceCycle">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector"
+    android:id="@+id/inlayout"
+    tools:ignore="MissingConstraints">
+
+
+ <TextView
+     android:id="@+id/atten_day"
+     android:layout_width="35dp"
+     android:layout_height="wrap_content"
+     android:gravity="center_horizontal"
+     android:text="12"
+     android:textColor="@color/black"
+     tools:ignore="MissingConstraints"
+     android:layout_margin="12dp"
+     ></TextView>
+
+ <TextView
+     android:id="@+id/atten_month"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_below="@id/atten_day"
+     android:gravity="center_horizontal"
+     android:text="Feb"
+     android:layout_marginLeft="12dp"
+
+     android:textColor="@color/white"
+     tools:ignore="MissingConstraints"
+     ></TextView>
+</RelativeLayout>
+ <TextView
+     android:id="@+id/punchin"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginLeft="32dp"
+     android:gravity="center_vertical"
+     android:text="Punch In"
+     android:textColor="@color/black"
+     android:textSize="15dp"
+     android:paddingTop="12dp"
+     app:layout_constraintLeft_toRightOf="@id/inlayout"
+     tools:ignore="MissingConstraints"
+     tools:layout_editor_absoluteX="90dp"
+     tools:layout_editor_absoluteY="16dp" />
+
+ <TextView
+     android:id="@+id/punchout"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:gravity="center_vertical"
+     android:paddingLeft="40dp"
+     android:text="Punch Out"
+     android:textSize="15dp"
+     android:paddingTop="12dp"
+
+     android:textColor="@color/black"
+     app:layout_constraintStart_toEndOf="@id/punchin"
+     tools:ignore="MissingConstraints"
+     tools:layout_editor_absoluteX="90dp"
+     tools:layout_editor_absoluteY="16dp" />
+
+ <TextView
+     android:id="@+id/outdate"
+     android:layout_width="55dp"
+     android:layout_height="21dp"
+     android:text="8:00"
+     android:textColor="@color/black"
+     android:textSize="14dp"
+     android:layout_marginTop="20dp"
+     app:layout_constraintLeft_toRightOf="@id/inlayout"
+     app:layout_constraintEnd_toEndOf="@id/punchout"
+     app:layout_constraintBottom_toBottomOf="@id/inlayout"
+     tools:ignore="MissingConstraints" />
+
+ <TextView
+     android:id="@+id/indate"
+     android:layout_width="55dp"
+     android:layout_height="21dp"
+     android:layout_marginTop="4dp"
+     android:text="10:00"
+     android:textColor="@color/black"
+     android:textSize="14dp"
+     app:layout_constraintLeft_toRightOf="@id/inlayout"
+     app:layout_constraintBottom_toBottomOf="@id/inlayout"
+     app:layout_constraintEnd_toEndOf="@id/punchin"
+
+     tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
