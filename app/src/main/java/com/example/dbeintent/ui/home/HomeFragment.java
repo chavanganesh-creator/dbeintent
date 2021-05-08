@@ -55,6 +55,9 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FComplaint.jpg?alt=media&token=686f23dc-eddf-4789-ad9c-f8ad36eaed0a");
         mNames.add("Complaint");
 
+        mImageUrls.add("https://firebasestorage.googleapis.com/v0/b/dbeintent.appspot.com/o/Panel_image%2FHistory.jpg?alt=media&token=788e6bd8-cdfa-409c-aaa2-f0d1593a59d6");
+        mNames.add("History");
+
         initRecyclerView();
     }
 

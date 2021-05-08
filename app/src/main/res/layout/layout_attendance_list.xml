@@ -9,7 +9,7 @@
     android:layout_margin="10dp"
     android:padding="8dp"
     android:elevation="6dp"
-    tools:ignore="ResourceCycle">
+     >
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -19,25 +19,26 @@
 
 
  <TextView
-     android:id="@+id/atten_day"
+     android:id="@+id/atten_date"
      android:layout_width="35dp"
      android:layout_height="wrap_content"
      android:gravity="center_horizontal"
      android:text="12"
-     android:textColor="@color/black"
+     android:textColor="@color/white"
      tools:ignore="MissingConstraints"
      android:layout_margin="12dp"
+     android:textSize="22dp"
      ></TextView>
 
  <TextView
-     android:id="@+id/atten_month"
-     android:layout_width="wrap_content"
+     android:id="@+id/atten_day"
+     android:layout_width="35dp"
      android:layout_height="wrap_content"
-     android:layout_below="@id/atten_day"
+     android:layout_below="@id/atten_date"
      android:gravity="center_horizontal"
      android:text="Feb"
-     android:layout_marginLeft="12dp"
-
+     android:layout_margin ="12dp"
+     android:textSize="18dp"
      android:textColor="@color/white"
      tools:ignore="MissingConstraints"
      ></TextView>

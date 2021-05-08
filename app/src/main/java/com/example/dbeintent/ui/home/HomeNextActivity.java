@@ -34,10 +34,11 @@ public class HomeNextActivity extends AppCompatActivity {
         Bundle bundle=new Bundle();
         bundle.putString("imgurl", getIntent().getStringExtra("image_url"));
         switch (imageName){
-            case "Activited Task":  loadfragment(new ActiveRunTask(),bundle);break;
-            case "Add Task":        loadfragment(new AddTaskEmp(), bundle);break;
-            case "Attendance":      loadfragment(new Attendance(),bundle);break;
-            case  "Complaint":      loadfragment(new Complaint(),bundle);break;
+            case "Activited Task":      loadfragment(new ActiveRunTask(),bundle);break;
+            case "Add Task"      :      loadfragment(new AddTaskEmp(), bundle);break;
+            case "Attendance"    :      loadfragment(new Attendance(),bundle);break;
+            case "Complaint"     :      loadfragment(new Complaint(),bundle);break;
+            case "History"       :      loadfragment(new History(),bundle);
         }
 
 

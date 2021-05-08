@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -28,40 +27,43 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-
-public class AddTaskEmp extends Fragment {
+public class History extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     ProgressBar loadingPB;
     public AdapterTaskList adapter;
     public RecyclerView recyclerView;
     public ArrayList<Note> noteArrayList;
-    private int cnt=0;
+
+    public History() {
+     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v= inflater.inflate(R.layout.fragment_add_task_emp, container, false);
+        View v= inflater.inflate(R.layout.fragment_history, container, false);
         ImageView image =v.findViewById(R.id.image);
         loadingPB = v.findViewById(R.id.idProgressBar);
-        recyclerView=v.findViewById(R.id.recycler_view1);
-        Button addbtn=v.findViewById(R.id.task_addbucket);
+        recyclerView=v.findViewById(R.id.recycler_history);
+
         String imageUrl = this.getArguments().getString("imgurl");
         Glide.with(getContext())
                 .asBitmap()
                 .load(imageUrl)
                 .into(image);
+
         noteArrayList=new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         adapter = new AdapterTaskList(noteArrayList,v.getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-
-        db.collection("Task")
+//Hard Coded string change userid latter
+        db.collection("Task").whereEqualTo("emp_compl_id","chavanganesh806@gmail.com")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
 
                     @Override
@@ -93,11 +95,8 @@ public class AddTaskEmp extends Fragment {
                         }
                         adapter.notifyDataSetChanged();
 
-
                     }
                 });
         return v;
-
     }
-
 }

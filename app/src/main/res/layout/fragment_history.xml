@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.History">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:layout_gravity="fill"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="#EDDDDD"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imagetittle"
+            android:layout_below="@id/image"
+            android:textColor="#FF0059"
+            android:textSize="22dp"
+            android:text="All History "/>
+
+        <ProgressBar
+            android:id="@+id/idProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_history"
+            android:background="@drawable/innercard"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -21,7 +21,7 @@ public class AttendanceRecycler extends RecyclerView.Adapter<AttendanceRecycler.
     private ArrayList<Date> noteArrayList;
     private Context context;
     SimpleDateFormat sdf = new SimpleDateFormat("dd");
-    SimpleDateFormat sdfday = new SimpleDateFormat("MMM");
+    SimpleDateFormat sdfday = new SimpleDateFormat("E");
     SimpleDateFormat sdfinout=new SimpleDateFormat("hh:mm");
 
     public AttendanceRecycler(ArrayList<Date> noteArrayList, Context context) {

@@ -1,11 +1,13 @@
 package com.example.dbeintent.ui.home.classes;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+
 public class Note {
     private String task_id;
     private String cli_name;
     private String task_address;
     private String cli_description;
-
 
     public Note() {
 
@@ -15,6 +17,7 @@ public class Note {
         this.cli_name = cli_name;
         this.task_address = task_address;
         this.cli_description = cli_description;
+
     }
 
     public String getTask_id() {
