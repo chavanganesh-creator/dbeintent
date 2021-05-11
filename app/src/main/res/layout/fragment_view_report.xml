@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.report.ViewReport">
+
+        <TextView
+            android:id="@+id/followdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#EF0F0F"
+            android:textSize="26dp"
+            android:fontFamily="@font/crete_round"
+            android:text="Report Details"
+            android:padding="8dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="206dp"
+            android:layout_height="218dp"
+            android:layout_gravity="fill"
+            android:layout_marginTop="22dp"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:outlineAmbientShadowColor="#F7F5F8"
+            android:scaleType="fitXY"
+            android:padding="24dp"
+            android:src="@mipmap/ic_launcher_round"
+            tools:ignore="MissingConstraints" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@id/image"
+            android:background="@drawable/atten_rectangle"
+            android:padding="19dp"
+            android:elevation="8dp"
+
+            android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/report_id"
+                    android:textColor="@color/colorAccent"
+                    android:text="WWEHJK345"
+                      ></TextView>
+                <TextView
+                    android:id="@+id/cust_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/crete_round"
+                    android:layout_below="@id/report_id"
+                    android:text="Ganesh Chavan"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/report_adress"
+                    android:layout_below="@id/cust_name"
+                    android:text="Mohit Socity,\n shramikNagar"
+                    ></TextView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/image"
+             android:background="@drawable/innercard"/>
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/image"
+            android:paddingTop="5dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_margin="4dp"
+            android:scrollbars="none"
+            >
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    >
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                                android:id="@+id/spinner"
+                                ></Spinner>
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                                 android:id="@+id/progress_circular"/>
+                        <TextView
+                            android:id="@+id/taskdiscriptiont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Discription "
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/reportdiscription"
+                            android:layout_marginLeft="11dp"
+                            android:inputType="none"
+                            android:textColor="#D27E7C7C"
+                            android:focusable="false"
+                            />
+                        <TextView
+                            android:id="@+id/report_fulladress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Full Address"
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_address"
+                            android:layout_marginLeft="11dp"
+                            android:focusable="false"
+                            android:textColor="#D27E7C7C"
+                            />
+                        <TextView
+                            android:id="@+id/report_mob_numbertt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Referal Contact Number"
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_mob_number"
+                            android:layout_marginLeft="11dp"
+                            android:focusable="false"
+                            android:textColor="#D27E7C7C"
+                            />
+                        <TextView
+                            android:id="@+id/task_generationt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Report Generated By"
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_generation"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:textColor="#D27E7C7C"
+                            android:layout_marginLeft="11dp"
+                            />
+                        <TextView
+                            android:id="@+id/task_Datet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Report Generated Time And Date"
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_date"
+                            android:layout_marginLeft="11dp"
+                            android:focusable="false"
+                            android:textColor="#D27E7C7C"
+                            android:layout_marginBottom="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/bill_typet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Bill Type"
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/bill_type"
+                            android:layout_marginLeft="11dp"
+                            android:focusable="false"
+                            android:textColor="#D27E7C7C"
+                            android:layout_marginBottom="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/bill_amountt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/crete_round"
+                            android:layout_centerVertical="true"
+                            android:text="Bill Amount"
+                            android:padding="10dp"
+                            />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/bill_amount"
+                            android:layout_marginLeft="11dp"
+                            android:focusable="false"
+                            android:textColor="#D27E7C7C"
+                            android:layout_marginBottom="10dp"
+                            />
+                </LinearLayout>
+
+        </ScrollView>
+
+
+</RelativeLayout>
