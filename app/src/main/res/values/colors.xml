@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#FF4081</color>
     <color name="cyan">#00FFFF</color>
+    <color name="grayesh">#F3EFEFEA</color>
 </resources>

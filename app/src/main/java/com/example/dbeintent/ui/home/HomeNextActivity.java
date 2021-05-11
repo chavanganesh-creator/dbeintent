@@ -38,7 +38,7 @@ public class HomeNextActivity extends AppCompatActivity {
             case "Add Task"      :      loadfragment(new AddTaskEmp(), bundle);break;
             case "Attendance"    :      loadfragment(new Attendance(),bundle);break;
             case "Complaint"     :      loadfragment(new Complaint(),bundle);break;
-            case "History"       :      loadfragment(new History(),bundle);
+            case "History"       :      loadfragment(new History(),bundle);break;
         }
 
 

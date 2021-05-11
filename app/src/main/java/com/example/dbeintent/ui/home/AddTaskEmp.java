@@ -68,10 +68,6 @@ public class AddTaskEmp extends Fragment {
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots,
                                         @Nullable FirebaseFirestoreException e) {
                         ArrayList<Note> newArrayList=new ArrayList<>();
-                        if (e != null) {
-                            Toast.makeText(getContext(), "Listen failed.", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
 //                        for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
 //                            //Log.d(TAG, document.getId() + " => " + document.getData());
 //                            Toast.makeText(getContext(), document.getId(), Toast.LENGTH_SHORT).show();

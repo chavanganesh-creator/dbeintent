@@ -2,6 +2,8 @@ package com.example.dbeintent.ui.report;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +12,17 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.dbeintent.R;
+import com.example.dbeintent.ui.home.ActiveRunTask;
+import com.example.dbeintent.ui.home.AddTaskEmp;
+import com.example.dbeintent.ui.home.Attendance;
+import com.example.dbeintent.ui.home.Complaint;
+import com.example.dbeintent.ui.home.History;
+
+import java.util.ArrayList;
 
 public class ReportNextActivity extends AppCompatActivity {
-
+    private ArrayList<String> mImageUrls = new ArrayList<>();
+    FragmentManager fm = getSupportFragmentManager();
     private static final String TAG = "HomeNextActivity";
 
     @Override
@@ -26,28 +36,23 @@ public class ReportNextActivity extends AppCompatActivity {
 
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
-
-        if(getIntent().hasExtra("image_url") && getIntent().hasExtra("image_name")){
-            Log.d(TAG, "getIncomingIntent: found intent extras.");
-
-            String imageUrl = getIntent().getStringExtra("image_url");
-            String imageName = getIntent().getStringExtra("image_name");
-
-            setImage(imageUrl, imageName);
+        String imageName = getIntent().getStringExtra("image_name");
+        Bundle bundle=new Bundle();
+        bundle.putString("imgurl", getIntent().getStringExtra("image_url"));
+        switch (imageName){
+            case "View Report"     :      loadfragment(new ViewReport(),bundle);break;
+//            case "Add Task"      :      loadfragment(new AddTaskEmp(), bundle);break;
+//            case "Attendance"    :      loadfragment(new Attendance(),bundle);break;
+//            case "Complaint"     :      loadfragment(new Complaint(),bundle);break;
+//            case "History"       :      loadfragment(new History(),bundle);break;
         }
+
     }
 
 
-    private void setImage(String imageUrl, String imageName){
-        Log.d(TAG, "setImage: setting te image and name to widgets.");
-
-        TextView name = findViewById(R.id.image_description);
-        name.setText(imageName);
-
-        ImageView image = findViewById(R.id.image);
-        Glide.with(this)
-                .asBitmap()
-                .load(imageUrl)
-                .into(image);
+    private void loadfragment(Fragment fragment, Bundle bundle) {
+        fragment.setArguments(bundle);
+        fm.beginTransaction().add(R.id.servefragment,fragment).commit();
     }
+
 }

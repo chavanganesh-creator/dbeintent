@@ -38,47 +38,79 @@ public class Attendance extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     public ArrayList<Date> noteArrayList;
     public Attendance() {
-
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view=inflater.inflate(R.layout.fragment_attendance, container, false);
-        MethodOfReturnArray();
+        //MethodOfReturnArray();
+        MethodOfSnapshot();
         recyclerView=view.findViewById(R.id.atten_recycler);
         noteArrayList =new ArrayList<>();
         recyclerView.setHasFixedSize(true);
+
         attenAdapter = new AttendanceRecycler(noteArrayList,view.getContext());
         recyclerView.setAdapter(attenAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
         return view;
         }
 
-    private void MethodOfReturnArray() {
+//    private void MethodOfReturnArray() {
+//        DocumentReference docIdRef=db.collection("Employee").document("chavan@21312");
+//        docIdRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//            @Override
+//            public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                if (documentSnapshot.exists()) {
+//                    ArrayList<Timestamp> arrList = new ArrayList<>();
+//                    SimpleDateFormat sdf = new SimpleDateFormat("E, dd/MM/yyyy");
+//                    arrList = (ArrayList) documentSnapshot.get("emp_attendance");
+//
+////                    StringBuffer sb = new StringBuffer();
+//                    for (Timestamp s : arrList) {
+//                        Date dataDate = s.toDate();
+//                        noteArrayList.add(dataDate);
+//                    }
+////                    String str = sb.toString();
+//
+//                }
+//            }
+//        });
+//    }
+
+    private void MethodOfSnapshot(){
         DocumentReference docIdRef=db.collection("Employee").document("chavan@21312");
-        docIdRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        docIdRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if (documentSnapshot.exists()) {
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                   // Log.d(TAG, "Current data: " + snapshot.getData());
                     ArrayList<Timestamp> arrList = new ArrayList<>();
                     SimpleDateFormat sdf = new SimpleDateFormat("E, dd/MM/yyyy");
-                    arrList = (ArrayList) documentSnapshot.get("emp_attendance");
+                    arrList = (ArrayList) snapshot.get("emp_attendance");
 
 //                    StringBuffer sb = new StringBuffer();
                     for (Timestamp s : arrList) {
                         Date dataDate = s.toDate();
                         noteArrayList.add(dataDate);
                     }
-//                    String str = sb.toString();
-
+                } else {
+                   // Log.d(TAG, "Current data: null");
                 }
             }
         });
