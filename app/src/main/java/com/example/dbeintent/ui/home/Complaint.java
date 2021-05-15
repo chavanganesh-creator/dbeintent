@@ -71,7 +71,7 @@ public class Complaint extends Fragment {
                 String comp_refnumber = comprefnumber.getText().toString();
                 String compl_addr = compladdr.getText().toString();
 
-                if(taskid.length()==0 && task_id.trim().contentEquals(" "))
+                if(taskid.length()==0)
                 {
                     taskid.requestFocus();
                     taskid.setError("Field Can't Be Empty");

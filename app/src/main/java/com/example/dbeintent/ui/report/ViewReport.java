@@ -1,5 +1,7 @@
 package com.example.dbeintent.ui.report;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -62,6 +65,7 @@ public class ViewReport extends Fragment {
         EditText reportDate=(EditText) v.findViewById(R.id.report_date);
         EditText billType=(EditText) v.findViewById(R.id.bill_type);
         EditText billAmount=(EditText) v.findViewById(R.id.bill_amount);
+
         Spinner spinner =(Spinner) v.findViewById(R.id.spinner);
         ProgressBar smp=(ProgressBar)v.findViewById(R.id.progress_circular);
         reportDiscription.setEnabled(false);
@@ -97,6 +101,7 @@ public class ViewReport extends Fragment {
             }
 
             private void executedb(String s) {
+                Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 DocumentReference docIdRef=db.collection("Report").document(s);
                 docIdRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
@@ -124,8 +129,6 @@ public class ViewReport extends Fragment {
                                 .asBitmap()
                                 .load(imageUrl)
                                 .into(image);
-
-
                     }
 
                 });
@@ -139,17 +142,9 @@ public class ViewReport extends Fragment {
 
 
 
-
         return v;
 
     }
 
-    private boolean notEmpty(String passDocReport) {
-        if (passDocReport != null && !passDocReport.isEmpty()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 }

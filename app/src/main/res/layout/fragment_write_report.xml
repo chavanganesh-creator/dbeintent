@@ -1,14 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.report.WriteReport">
+    tools:context=".ui.report.ViewReport">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/followdetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#EF0F0F"
+        android:textSize="26dp"
+        android:fontFamily="@font/crete_round"
+        android:text="Create Report"
+        android:padding="8dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="244dp"
+        android:layout_gravity="fill"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="#F7F5F8"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:background="@drawable/transparent"
+        android:elevation="8dp"
+        android:fontFamily="@font/crete_round"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:text="Create Report"
+        android:textColor="@color/purple_700"
+        android:textSize="26dp">
+
+    </TextView>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image"
+        android:background="@drawable/innercard"/>
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@id/image"
+        android:paddingTop="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_margin="4dp"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/report_idselector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Select Report ID"
+                android:padding="10dp"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner"
+                android:outlineAmbientShadowColor="@color/grayesh"
+                ></Spinner>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/progress_circular"/>
+            <TextView
+                android:id="@+id/cust_namet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Customer Name "
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cust_name"
+                android:layout_marginLeft="11dp"
+                android:textColor="#D27E7C7C"
+                android:focusable="true"
+                />
+            <TextView
+                android:id="@+id/taskdiscriptiont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Discription "
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reportdiscription"
+                android:layout_marginLeft="11dp"
+                android:textColor="#D27E7C7C"
+                android:focusable="true"
+                />
+            <TextView
+                android:id="@+id/report_fulladress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Full Address"
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/report_address"
+                android:layout_marginLeft="11dp"
+                android:focusable="true"
+                android:textColor="#D27E7C7C"
+                />
+            <TextView
+                android:id="@+id/report_mob_numbertt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Referal Contact Number"
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/report_mob_number"
+                android:layout_marginLeft="11dp"
+                android:focusable="true"
+                android:inputType="number"
+                android:textColor="#D27E7C7C"
+                />
+            <TextView
+                android:id="@+id/task_generationt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Report Generated By"
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/report_generation"
+                android:focusable="true"
+                android:inputType="text"
+                android:textColor="#D27E7C7C"
+                android:layout_marginLeft="11dp"
+                />
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/bill_typet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Bill Type"
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bill_type"
+                android:layout_marginLeft="11dp"
+                android:focusable="true"
+                android:textColor="#D27E7C7C"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:id="@+id/bill_amountt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Bill Amount"
+                android:padding="10dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bill_amount"
+                android:layout_marginLeft="11dp"
+                android:focusable="true"
+                android:inputType="number"
+                android:textColor="#D27E7C7C"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:id="@+id/imgbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/crete_round"
+                android:layout_centerVertical="true"
+                android:text="Bill Amount"
+                android:padding="10dp"
+                />
+            <Button
+                android:id="@+id/submit_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Image"
+
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgview"
+
+                android:src="@mipmap/ic_launcher"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:id="@+id/submitbtn"
+                android:layout_gravity="center"
+                android:text="Save Report">
+            </Button>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

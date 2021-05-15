@@ -41,7 +41,7 @@ public class ReportNextActivity extends AppCompatActivity {
         bundle.putString("imgurl", getIntent().getStringExtra("image_url"));
         switch (imageName){
             case "View Report"     :      loadfragment(new ViewReport(),bundle);break;
-//            case "Add Task"      :      loadfragment(new AddTaskEmp(), bundle);break;
+            case "Create Report"   :      loadfragment(new WriteReport(), bundle);break;
 //            case "Attendance"    :      loadfragment(new Attendance(),bundle);break;
 //            case "Complaint"     :      loadfragment(new Complaint(),bundle);break;
 //            case "History"       :      loadfragment(new History(),bundle);break;

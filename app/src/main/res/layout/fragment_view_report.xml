@@ -33,7 +33,7 @@
 
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_marginTop="80dp"
@@ -46,7 +46,7 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/report_id"
                     android:textColor="@color/colorAccent"
@@ -54,7 +54,7 @@
                       ></TextView>
                 <TextView
                     android:id="@+id/cust_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/crete_round"
                     android:layout_below="@id/report_id"
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/report_adress"
                     android:layout_below="@id/cust_name"
-                    android:text="Mohit Socity,\n shramikNagar"
+                    android:text="Mohit Socity,\nShramikNagar"
                     ></TextView>
         </RelativeLayout>
 
@@ -91,6 +91,16 @@
                     android:layout_height="fill_parent"
                     android:orientation="vertical"
                     >
+                    <TextView
+                        android:id="@+id/report_idselector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/crete_round"
+                        android:layout_centerVertical="true"
+                        android:text="Select Report ID"
+                        android:padding="10dp"
+                        />
                         <Spinner
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
